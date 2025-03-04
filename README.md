@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weather Dashboard Application
 
-## Getting Started
+This is a minimal weather dashboard application built with Next.js, TypeScript, Tailwind CSS, and Redux Toolkit. The app allows users to search for cities and view current weather conditions and a 5‑day forecast for each city. It uses the [WeatherAPI](https://www.weatherapi.com/) for fetching weather data.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **City Search:** Users can add cities to the dashboard via a search bar.
+- **Current Weather:** Displays current conditions (temperature, humidity, wind speed) for each added city.
+- **5‑Day Forecast:** Shows a 5‑day weather forecast for each city.
+- **Pin & Remove:** Users can pin/unpin cities or remove them from the dashboard.
+- **Responsive Design:** Built with Tailwind CSS to work on various screen sizes.
+- **State Management:** Uses Redux Toolkit for managing weather data.
+- **Custom Hook:** Contains a custom hook (`useWeather`) to encapsulate weather data fetching logic.
+- **Error Handling:** Proper error messages are displayed if API requests fail.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** with TypeScript
+- **Tailwind CSS** for styling
+- **Redux Toolkit** for state management
+- **Axios** for HTTP requests
+- **WeatherAPI** for weather data
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+- **pages/**: Contains your Next.js page(s). The main dashboard is in `page.tsx`.
+- **src/components/**: Contains UI components like the search bar, city card, and dashboard.
+- **src/hooks/**: Contains custom hooks. For example, `useWeather` handles fetching weather data.
+- **src/store/**: Contains Redux Toolkit configuration and the weather slice.
+- **styles/**: Contains global styles, including Tailwind’s directives.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- clone the repository
+- cd weather-app
+- npm install
+- update the environment variables provided in the .env.example file
+- npm run dev
