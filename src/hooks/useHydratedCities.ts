@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCities } from '@/features/weatherSlice';
-import { loadCities } from '@/app/localStorage';
-import type { AppDispatch } from '@/app/store';
+import { loadCities } from '@/functions/localStorage';
+import type { AppDispatch } from '@/store/store';
 
 export const useHydrateCities = () => {
     const dispatch = useDispatch<AppDispatch>();

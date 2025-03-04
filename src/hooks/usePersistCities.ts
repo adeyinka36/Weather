@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { saveCities } from '@/app/localStorage';
-import { RootState, store } from '@/app/store';
+import { saveCities } from '@/functions/localStorage';
+import { RootState, store } from '@/store/store';
 
 export const usePersistCities = () => {
     useEffect(() => {

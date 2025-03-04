@@ -1,6 +1,6 @@
 
-import './globals.css'
-import ReduxProvider from '@/app/reduxProvider'
+import '../styles/globals.css'
+import ReduxProvider from '@/store/reduxProvider'
 import React from "react";
 
 export default function RootLayout({

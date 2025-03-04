@@ -1,52 +1,12 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {CityWeather, WeatherState} from "@/interfaces";
-
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://api.weatherapi.com/v1/forecast.json';
-
+import {fetchWeather} from "@/functions/fetchWeather";
 
 const initialState: WeatherState = {
     cities: [],
     loading: false,
     error: null,
 }
-
-export const fetchWeather = createAsyncThunk<
-    CityWeather,
-    string,
-    { rejectValue: string }
->('weather/fetchWeather', async (city: string, thunkAPI) => {
-    try {
-        const response = await axios.get(BASE_URL, {
-            params: {
-                key: API_KEY,
-                q: city,
-                days: 5,
-                aqi: 'no',
-                alerts: 'no',
-            },
-        })
-        const data = response.data
-        return {
-            id: data.location.name.toLowerCase(), // simple id – in production consider a more robust id
-            city: data.location.name,
-            current: data.current,
-            forecast: data.forecast.forecastday,
-            pinned: false,
-        }
-    } catch (error: any) {
-        let message = "Error fetching weather data.";
-        if([400, 404].includes(error.status)) {
-            message = "City not found. Please enter a valid city."
-        }
-        if ([401, 403].includes(error.status)) {
-            message = "Invalid API key. Please set a valid API key."
-        }
-
-        return thunkAPI.rejectWithValue(message)
-    }
-})
 
 const weatherSlice = createSlice({
     name: 'weather',

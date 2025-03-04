@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import {CityWeather, ForecastDay} from '@/features/weatherSlice'
+import {CityWeather, ForecastDay} from '@/interfaces';
 import { useDispatch } from 'react-redux'
 import { pinCity, removeCity } from '@/features/weatherSlice'
 
@@ -12,7 +12,7 @@ interface CityCardProps {
 const CityCard: React.FC<CityCardProps> = ({ cityData }) => {
     const dispatch = useDispatch()
     return (
-        <div className="border rounded p-4 shadow bg-white">
+        <div className={`border rounded p-4 shadow ${ cityData.pinned ?'bg-amber-400' :'bg-white'}`}>
             <div className="flex justify-between items-center">
                 <h2 className="text-xl font-bold">{cityData.city}</h2>
                 <div>

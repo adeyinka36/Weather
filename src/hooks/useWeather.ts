@@ -1,8 +1,9 @@
 "use client";
 
 import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, RootState } from '@/app/store'
-import { fetchWeather } from '@/features/weatherSlice'
+import { AppDispatch, RootState } from '@/store/store'
+import {fetchWeather} from "@/functions/fetchWeather";
+
 
 export const useWeather = () => {
     const dispatch = useDispatch<AppDispatch>()

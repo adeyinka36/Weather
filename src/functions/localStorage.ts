@@ -1,5 +1,4 @@
-import { CityWeather } from '@/features/weatherSlice';
-
+import { CityWeather } from '@/interfaces';
 export const loadCities = (): CityWeather[] | undefined => {
     try {
         const serializedCities = localStorage.getItem('cities');

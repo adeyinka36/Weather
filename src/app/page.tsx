@@ -5,7 +5,7 @@ import Head from 'next/head';
 import SearchBar from '@/components/SearchBar';
 import WeatherDashboard from '@/components/WeatherDashboard';
 import { Provider } from 'react-redux';
-import {RootState, store} from '@/app/store';
+import {RootState, store} from '@/store/store';
 import { useHydrateCities } from '@/hooks/useHydratedCities';
 import { usePersistCities } from '@/hooks/usePersistCities';
 import { useSelector } from 'react-redux';
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
             <Head>
                 <title>Weather Dashboard</title>
                 <meta name="description" content="Weather dashboard using WeatherAPI" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/src/assets/images/favicon.ico" />
             </Head>
             <main className="min-h-screen bg-gray-100 p-4">
                 <h1 className="text-3xl font-bold text-center mb-6">Weather Dashboard</h1>

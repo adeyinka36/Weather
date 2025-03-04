@@ -27,7 +27,8 @@ This is a minimal weather dashboard application built with Next.js, TypeScript, 
 - **src/components/**: Contains UI components like the search bar, city card, and dashboard.
 - **src/hooks/**: Contains custom hooks. For example, `useWeather` handles fetching weather data.
 - **src/store/**: Contains Redux Toolkit configuration and the weather slice.
-- **styles/**: Contains global styles, including Tailwind’s directives.
+- **src/styles/**: Contains global styles, including Tailwind’s directives.
+- **src/functions/**: Contains helper functions.
 
 ## Installation
 
@@ -36,3 +37,6 @@ This is a minimal weather dashboard application built with Next.js, TypeScript, 
 - npm install
 - update the environment variables provided in the .env.example file
 - npm run dev
+
+
+Here is a link to the deployed application. It was dockerized and deployed on an EC2 instance: (http://44.210.146.57/)

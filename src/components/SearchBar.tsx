@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { AppDispatch } from '@/app/store'
-import { fetchWeather } from '@/features/weatherSlice'
+import { AppDispatch } from '@/store/store'
+import {fetchWeather} from "@/functions/fetchWeather";
+
 
 const SearchBar: React.FC = () => {
     const [city, setCity] = useState('')

@@ -1,0 +1,15 @@
+# Ignore local environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+
+# Ignore node_modules and vendor (these will be installed inside the container)
+node_modules
+npm-debug.log
+yarn-error.log
+vendor
+
+# Ignore logs and cache files
+storage/log
